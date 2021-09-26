@@ -1,0 +1,20 @@
+package com.bl;
+
+import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+
+class QueueTest {
+	@Test
+	public void given3NumbersInQueueWhenAddedShouldPassQueueTest() {
+		Queue<Integer> queue = new Queue<>();
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		queue.enqueue(myFirstNode);
+		queue.enqueue(mySecondNode);
+		queue.enqueue(myThirdNode);
+		INode<Integer> myNode = queue.peak();
+		queue.printQueue();
+		Assert.assertEquals(myNode, myFirstNode);
+	}
+}
