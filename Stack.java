@@ -1,9 +1,21 @@
 package com.bl;
 
-public class Stack {
+public class Stack<K> {
+	public final MyLinkedList<K> myLinkedList;
 
-	public static void main(String[] args) {
-		System.out.println("Welcome to stack");
+	public Stack() {
+		myLinkedList = new MyLinkedList<>();
 	}
 
+	public void push(INode<K> element) {
+		myLinkedList.addNode(element);
+	}
+
+	public INode<K> peak() {
+		return myLinkedList.head;
+	}
+
+	public void printStack() {
+		myLinkedList.display();
+	}
 }
